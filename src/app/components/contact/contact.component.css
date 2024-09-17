@@ -1,0 +1,113 @@
+/* contactame  */
+
+.retro-contact-me {
+    background-color: #0c0c0c;
+    color: #00ff00;
+    font-family: 'VT323', monospace;
+    padding: 4rem 0;
+  }
+  
+  .content-wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+  }
+  
+  .section-title {
+    text-align: center;
+    font-size: 3rem;
+    margin-bottom: 2rem;
+    font-family: 'Press Start 2P', cursive;
+    color: #00ff00;
+    text-shadow: 0 0 10px #00ff00;
+  }
+  
+  .contact-container {
+    display: flex;
+    gap: 2rem;
+    justify-content: space-between;
+  }
+  
+  .contact-form {
+    flex: 1;
+    background: rgba(0, 0, 0, 0.7);
+    padding: 2rem;
+    border: 2px solid #00ff00;
+    box-shadow: 0 0 10px #00ff00;
+  }
+  
+  .form-group {
+    margin-bottom: 1.5rem;
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-size: 1.2rem;
+  }
+  
+  input, textarea {
+    width: 100%;
+    padding: 0.5rem;
+    font-size: 1rem;
+    background-color: #000;
+    border: 1px solid #00ff00;
+    color: #00ff00;
+    font-family: 'VT323', monospace;
+  }
+  
+  textarea {
+    height: 150px;
+    resize: vertical;
+  }
+  
+  .submit-btn {
+    background-color: #00ff00;
+    color: #000;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: 'Press Start 2P', cursive;
+  }
+  
+  .submit-btn:hover {
+    background-color: #000;
+    color: #00ff00;
+    box-shadow: 0 0 10px #00ff00;
+  }
+  
+  .contact-info {
+    flex: 1;
+    background: rgba(0, 0, 0, 0.7);
+    padding: 2rem;
+    border: 2px solid #00ff00;
+    box-shadow: 0 0 10px #00ff00;
+  }
+  
+  .contact-info h3 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    font-family: 'Press Start 2P', cursive;
+  }
+  
+  .contact-info p {
+    margin-bottom: 1rem;
+  }
+  
+  .contact-info ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .contact-info li {
+    margin-bottom: 0.5rem;
+  }
+  
+  @media (max-width: 768px) {
+    .contact-container {
+      flex-direction: column;
+    }
+  }
+  

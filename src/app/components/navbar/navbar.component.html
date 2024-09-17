@@ -1,0 +1,14 @@
+<nav class="retro-navbar">
+  <div class="navbar-content">
+    <a routerLink="/" class="brand">Retro Dev</a>
+    <ul class="nav-links">
+      <li><a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">{{ translate('home') }}</a></li>
+      <li><a routerLink="/about" routerLinkActive="active">{{ translate('about') }}</a></li>
+      <li><a routerLink="/projects" routerLinkActive="active">{{ translate('projects') }}</a></li>
+      <li><a routerLink="/contact" routerLinkActive="active">{{ translate('contact') }}</a></li>      
+    </ul>
+    <button (click)="toggleLanguage()" class="retro-translation-button">
+      {{ currentLanguage === 'en' ? 'ES' : 'EN' }}
+    </button>
+  </div>
+</nav>

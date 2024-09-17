@@ -1,0 +1,125 @@
+/* galeria */
+
+.retro-project-gallery {
+    background-color: #000;
+    color: #00ff00;
+    font-family: 'VT323', monospace;
+    padding: 4rem 0;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .background-grid {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+      linear-gradient(transparent 0%, rgba(32, 193, 255, 0.2) 2%, transparent 3%),
+      linear-gradient(90deg, transparent 0%, rgba(32, 193, 255, 0.2) 2%, transparent 3%);
+    background-size: 100px 100px;
+    animation: moveGrid 20s linear infinite;
+    z-index: 1;
+  }
+  
+  @keyframes moveGrid {
+    0% {
+      transform: translateY(0);
+    }
+    100% {
+      transform: translateY(100px);
+    }
+  }
+  
+  .content-wrapper {
+    position: relative;
+    z-index: 2;
+  }
+  
+  .section-title {
+    text-align: center;
+    font-size: 3rem;
+    margin-bottom: 2rem;
+    font-family: 'Press Start 2P', cursive;
+    color: #00ff00;
+    text-shadow: 0 0 10px #00ff00;
+  }
+  
+  .gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    padding: 0 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .project-box {
+    border: 2px solid #00ff00;
+    background-color: rgba(0, 0, 0, 0.7);
+    aspect-ratio: 1 / 1;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+  }
+  
+  .project-box:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px #00ff00;
+  }
+  
+  .project-content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 1rem;
+    background: rgba(0, 0, 0, 0.8);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+  
+  .project-box:hover .project-content {
+    opacity: 1;
+  }
+  
+  .project-content h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: #00ff00;
+  }
+  
+  .project-content p {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    color: #00ff00;
+  }
+  
+  .project-link {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background-color: #00ff00;
+    color: #000000;
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 0.3s ease;
+  }
+  
+  .project-link:hover {
+    background-color: #000000;
+    color: #00ff00;
+    box-shadow: 0 0 10px #00ff00;
+  }
+  
+  @media (max-width: 768px) {
+    .gallery-grid {
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+  }
