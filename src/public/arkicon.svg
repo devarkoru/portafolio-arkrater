@@ -1,0 +1,9 @@
+<svg version="1.2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
+	<title>Proyecto nuevo</title>
+	<defs>
+		<image  width="16" height="16" id="img1" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAAAXNSR0IB2cksfwAAAo5QTFRFAAAAp39mp39moLm7nHJauI9vs4xohlM60M/D2MGfwMzAha20e6au3rWLubCWmbO1x9TQmWpTxJZx47SF06mBkmFLrIRn0a+KzLaUt7ym3NzIhVFDhVlLtJFz0qqCzKiK1bCMwZVxjV9GiGFGmaqfpsW/l6ymoWRLpmJFzah/iXNroop917iV2LKLzp501J9wooVi5OHNm8DCqMG//OfJeU9HnWJHn3tmR0diSEheln9xz6yJ1Kd/xphxQD089ebIwbWPip2YQ2h3b0hFjlRAiFRFW0hPRj5Oh1RDh11MlnBdp4NryJ53++3Q8Nu4ydTR8+vT8cKJa0RChVBBllpDjVhFgE9ClFc9ilQ/iFZDjllFroNmiFJA1KFtsr2x+vLW7sKMWjxDXT9FhVJEl1xDjVZCmF1DnV9DhlRDhlBBilRCg09Acay7q7mu/PLDXERKTjpGUDtGYkJEgFNFl1tBmltBlVlBllxEhWBSkYV81MizPH6fYJeqm7Kuq7yyw8CnbX+GQ1ZsNjpPOzhLbHB3k6akX2l1TnKJeKe0Xp20fK+6PoGhQnuZVIuiZ5mqWIyjPXubLWeNM2SFT3uTW5mwTJOwP4OlO3ueNXmeJWKLPHyfQ3yZQHybSoOeU4ykWYqgZJCgWo6lUIqlQoSkMXifL3OaQnmXbpKfdqKvYZOmbJ6vZ42bVomfQn2cPHucO3qaNXWYM3WZL3GXSX2ZaI2abJGfhqCjnK2qWZevR4emQ4eoNHidT3+XT36XSnyVRXqUSX6XUIegTYOcRnqVUoGZXYaZa4qVUXqQJ26YI2eTKXKdLHCVMn+lLHeeL3edMXyhMHyhN32gRIShSYKdNHebJXCZJXKcKXulJ3WfJnCaYK2DFgAAANp0Uk5TAA0aASNwAggAAQABAQEBAQEbqKBOkhoCAQECFTNIvfrfZkACAQEAOkcW0////6MKAAAAAQKP79P/////+FAAAwEAAJX/////////930AAgAAAJj//////////+o1ARUAAH////////////964DYBKdP//////////3wI/+p4IAtV9P/////////4z////+vX6/////////////////////////////////////////////////////////////////////////////////////////////////80WCaNAAAAaklEQVR4nGNkAAJGxn8MMMDIwMD8l4WR8Rc7Iwh8YWDkZUQGz0AqGBikYfy7IC0qSAouMhgwGqJoOcTAaM+IBvwZNwSiCMQtikfmTmXMYfzEj6KiGt2MbnSB2egCq9EFdqMLnIYx3guBKQDMnBKRyaaKHAAAAABJRU5ErkJggg=="/>
+	</defs>
+	<style>
+	</style>
+	<use id="Capa 1" href="#img1" x="0" y="0"/>
+</svg>

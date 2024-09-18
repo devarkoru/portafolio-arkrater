@@ -1,13 +1,16 @@
 <section class="retro-project-gallery">
     <div class="background-grid"></div>
     <div class="content-wrapper">
-      <h2 class="section-title">Project Shortcuts</h2>
+      <h2 class="section-title">{{ translate('projects.title') }}</h2>
       <div class="gallery-grid">
         <div class="project-box" *ngFor="let project of projects; let i = index">
-          <div class="project-content">
+          <div class="project-content" [ngStyle]="{'background-image': 'url(' + project.image + ')',
+            'background-size': 'cover',
+            'background-position': 'center'
+          }">
             <h3>{{ project.name }}</h3>
             <p>{{ project.description }}</p>
-            <a href="{{ project.link }}" class="project-link">View Project</a>
+            <a href="{{ project.link }}" class="project-link">{{ translate('projects.viewProject') }}</a>
           </div>
         </div>
       </div>
