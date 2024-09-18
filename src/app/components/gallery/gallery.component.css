@@ -82,7 +82,7 @@
     text-align: center;
     padding: 1rem;
     background: rgba(0, 0, 0, 0.8);
-    opacity: 0;
+    opacity: 0.1;
     transition: opacity 0.3s ease;
   }
   
@@ -93,13 +93,23 @@
   .project-content h3 {
     font-size: 1.5rem;
     margin-bottom: 0.5rem;
-    color: #00ff00;
+    color: #d2d2d2;
+    opacity: 0;
+  }
+
+  .project-content:hover p {
+    opacity: 1;
   }
   
   .project-content p {
     font-size: 1rem;
     margin-bottom: 1rem;
     color: #00ff00;
+    opacity: 0;
+  }
+
+  .project-content:hover h3 {
+    opacity: 1;
   }
   
   .project-link {

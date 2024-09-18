@@ -8,6 +8,7 @@ import { HeroComponent } from "./components/hero/hero.component";
 import { AboutComponent } from './components/about/about.component';
 import { GalleryComponent } from './components/gallery/gallery.component';
 
+
 @Component({
   selector: 'app-root',
   standalone: true,
@@ -16,5 +17,5 @@ import { GalleryComponent } from './components/gallery/gallery.component';
   styleUrl: './app.component.css'
 })
 export class AppComponent {
-  title = 'portafolio-arkrater';
+  title = 'Portafolio de Arkrater';
 }
