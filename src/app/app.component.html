@@ -1,8 +1,7 @@
-<app-navbar></app-navbar>
-<main>
-    <app-hero></app-hero>
-    <app-about></app-about>
-    <app-gallery></app-gallery>
-    <app-contact></app-contact>
-</main>
-<app-footer></app-footer>
+<app-loading></app-loading>
+<app-navbar [@routeAnimations]="getRouteAnimationData(outlet)"></app-navbar>
+<div [@routeAnimations]="prepareRoute(outlet)">
+ 
+    <router-outlet #outlet="outlet"></router-outlet>
+<app-footer [@routeAnimations]="prepareRoute(outlet)"></app-footer>   
+</div>

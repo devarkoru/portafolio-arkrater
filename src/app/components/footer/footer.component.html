@@ -2,19 +2,19 @@
     <div class="footer-content">
       <div class="footer-section">
         <h3>Arkrater</h3>
-        <p>Persiguiendo el sueño de ser GameDev</p>
+        <p>{{ translate('footer.message') }}</p>
       </div>
       <div class="footer-section">
         <h3>Links</h3>
         <ul>
-          <li><a routerLink="/">Home</a></li>
-          <li><a routerLink="/about">About</a></li>
-          <li><a routerLink="/projects">Projects</a></li>
-          <li><a routerLink="/contact">Contact</a></li>
+          <li><a routerLink="/">{{ translate('home') }}</a></li>
+          <li><a routerLink="/about">{{ translate('about') }}</a></li>
+          <li><a routerLink="/projects">{{ translate('projects') }}</a></li>
+          <li><a routerLink="/contact">{{ translate('contact') }}</a></li>
         </ul>
       </div>
       <div class="footer-section">
-        <h3>Contáctame</h3>
+        <h3>{{ translate('contact.title') }}</h3>
         <ul>
           <li><a href="https://github.com/devarkoru" target="_blank">GitHub</a></li>
           <li><a href="https://linkedin.com/in/cnoyarzun/" target="_blank">LinkedIn</a></li>          
@@ -23,6 +23,6 @@
       </div>
     </div>
     <div class="footer-bottom">
-      <p>&copy; {{ currentYear }} Arkrater All rights reserved.</p>
+      <p>{{ translate('footer.title') }} {{ currentYear }} {{ translate('footer.title2') }}</p>
     </div>
   </footer>
