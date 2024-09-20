@@ -1,1 +1,31 @@
-<p>skills works!</p>
+<section class="image-carousel">
+  <div class="carousel-container">
+    <h2 class="glitch" [attr.data-text]="translate('carousel.title')">{{ translate('carousel.title') }}</h2>
+    <div class="carousel-wrapper">
+      <div class="carousel-slide" [style.transform]="'translateX(' + (-currentIndex * 100) + '%)'">
+        <div *ngFor="let project of projects" class="carousel-item">
+          <div class="image-container">
+            <img [src]="project.imageUrl" [alt]="project.title" class="carousel-image">
+          </div>
+          <div class="carousel-content">
+            <h3>{{ project.title }}</h3>
+            <p>{{ project.description }}</p>
+            <a [href]="project.itchIoLink" target="_blank" rel="noopener noreferrer" class="itch-io-button">
+              {{ translate('carousel.playOnItchIo') }}
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="carousel-controls">
+      <button (click)="prevSlide()" class="carousel-control prev">&#8592;</button>
+      <button (click)="nextSlide()" class="carousel-control next">&#8594;</button>
+    </div>
+    <div class="carousel-indicators">
+      <span *ngFor="let project of projects; let i = index" 
+            [class.active]="i === currentIndex" 
+            (click)="goToSlide(i)">
+      </span>
+    </div>
+  </div>
+</section>

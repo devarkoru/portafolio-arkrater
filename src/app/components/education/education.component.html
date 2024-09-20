@@ -1,2 +1,52 @@
-<p>education works!</p>
-aaaaaaaa
+
+<section class="retro-about-me">
+    <div class="container">
+      <div class="content">
+        <h2 class="glitch" [attr.data-text]="translate('about.title')">{{ translate('about.title') }}</h2>
+        <p>{{ translate('about.paragraph1') }}</p>
+        <p>{{ translate('about.paragraph2') }}</p>
+        <div class="skills">
+          <span class="skill">SQL</span>
+          <span class="skill">Unity</span>
+          <span class="skill">Java</span>
+          <span class="skill">Angular</span>          
+        </div>
+      </div>
+      <div class="portrait">
+        <div class="portrait-container">
+          <div class="scanline"></div>
+          <div class="crt-effect"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+<!-- Experiencia laboral -->
+<section class="professional-experience">
+  <h2 class="glitch" [attr.data-text]="translate('experience.title')">{{ translate('experience.title') }}</h2>
+  <div class="timeline-container" [@staggerAnimation]="experiences.length">
+    <div class="timeline-line" [style.width]="timelineWidth"></div>
+    <div *ngFor="let exp of experiences" class="timeline-item">
+      <div class="timeline-content">
+        <h3>{{ exp.year }}</h3>
+        <h4>{{ exp.company }}</h4>
+        <h5>{{ exp.position }}</h5>
+        <p>{{ translate(exp.descriptionKey) }}</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="education-section">
+  <h2 class="glitch" [attr.data-text]="translate('education.title')">{{ translate('education.title') }}</h2>
+  <div class="education-container" [@staggerAnimation]="educationList.length">
+    <div *ngFor="let edu of educationList" class="education-item">
+      <div class="education-content">
+        <h3>{{ edu.year }}</h3>
+        <h4>{{ edu.institution }}</h4>
+        <h5>{{ edu.degree }}</h5>
+        <p>{{ translate(edu.descriptionKey) }}</p>
+      </div>
+    </div>
+  </div>
+</section>

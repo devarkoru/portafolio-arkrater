@@ -4,10 +4,13 @@ import { AppComponent } from './app/app.component';
 import { routes } from './app/app.routes';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { provideHttpClient } from '@angular/common/http';
+import { provideAnimations } from '@angular/platform-browser/animations';
+
+
 
 bootstrapApplication(AppComponent, {
   providers: [
-    provideRouter(routes), provideAnimationsAsync(),  provideHttpClient()
+    provideRouter(routes), provideAnimationsAsync(),  provideHttpClient(), provideAnimations()
   ]
 })
 .catch(err => console.error(err));
