@@ -1,28 +1,11 @@
 <footer class="retro-footer">
-    <div class="footer-content">
-      <div class="footer-section">
-        <h3>Arkrater</h3>
-        <p>{{ translate('footer.message') }}</p>
-      </div>
-      <div class="footer-section">
-        <h3>Links</h3>
-        <ul>
-          <li><a routerLink="/">{{ translate('home') }}</a></li>
-          <li><a routerLink="/about">{{ translate('about') }}</a></li>
-          <li><a routerLink="/projects">{{ translate('projects') }}</a></li>
-          <li><a routerLink="/contact">{{ translate('contact') }}</a></li>
-        </ul>
-      </div>
-      <div class="footer-section">
-        <h3>{{ translate('contact.title') }}</h3>
-        <ul>
-          <li><a href="https://github.com/devarkoru" target="_blank">GitHub</a></li>
-          <li><a href="https://linkedin.com/in/cnoyarzun/" target="_blank">LinkedIn</a></li>          
-          <li><a href="https://playclassic.games/games/scrolling-shooter-dos-games-online/play-tyrian-online/play/" target="_blank">Inspiración de este diseño</a></li>
-        </ul>
-      </div>
+  <div class="footer-container">    
+    <img src="https://i.ibb.co/mFN10GC/a499e55b-7150-40df-8b2f-e2b54711b76c.webp" alt="Retro cat" class="cat-image">
+    <p>{{ translate('footer.title') }} {{ currentYear }} {{ translate('footer.title2') }}</p>
+    <div class="social-links">
+      <a href="https://github.com/devarkoru" target="_blank" rel="noopener noreferrer">GitHub</a>
+      <a href="https://linkedin.com/in/cnoyarzun/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+      <a href="https://playclassic.games/games/scrolling-shooter-dos-games-online/play-tyrian-online/play/" target="_blank" rel="noopener noreferrer">Inspiration Style</a>
     </div>
-    <div class="footer-bottom">
-      <p>{{ translate('footer.title') }} {{ currentYear }} {{ translate('footer.title2') }}</p>
-    </div>
-  </footer>
+  </div>
+</footer>
