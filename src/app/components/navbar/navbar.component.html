@@ -9,9 +9,10 @@
       <li><a routerLink="/about" routerLinkActive="active">{{ translate('about') }}</a></li>
       <li><a routerLink="/projects" routerLinkActive="active">{{ translate('projects') }}</a></li>
       <li><a routerLink="/contact" routerLinkActive="active">{{ translate('contact') }}</a></li>
+      <li><button (click)="toggleLanguage()" class="retro-translation-button">
+        {{ currentLanguage === 'en' ? 'ES' : 'EN' }}
+      </button></li>
     </ul>
-    <button (click)="toggleLanguage()" class="retro-translation-button">
-      {{ currentLanguage === 'en' ? 'ES' : 'EN' }}
-    </button>
+    
   </div>
 </nav>
