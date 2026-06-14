@@ -12,16 +12,16 @@ interface CarouselProject {
 }
 
 @Component({
-  selector: 'app-skills',
+  selector: 'app-projects-page',
   standalone: true,
   imports: [CommonModule],
   animations: [staggerProjectTransition],
-  templateUrl: './skills.component.html',
-  styleUrl: './skills.component.css'
+  templateUrl: './projects-page.component.html',
+  styleUrl: './projects-page.component.css'
 })
 
 
-export class SkillsComponent {
+export class ProjectsPageComponent {
 
   private translationService = inject(TranslationService);
 

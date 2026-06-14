@@ -4,14 +4,14 @@ import { CommonModule } from '@angular/common';
 import { staggerAboutTransition, staggerEducationTransition, staggerTransition } from '../../../route-transition';
 
 @Component({
-  selector: 'app-education',
+  selector: 'app-about-page',
   standalone: true,
   imports: [CommonModule],
   animations: [staggerTransition, staggerEducationTransition, staggerAboutTransition],
-  templateUrl: './education.component.html',
-  styleUrl: './education.component.css'
+  templateUrl: './about-page.component.html',
+  styleUrl: './about-page.component.css'
 })
-export class EducationComponent {
+export class AboutPageComponent {
   private translationService = inject(TranslationService);
 
   
