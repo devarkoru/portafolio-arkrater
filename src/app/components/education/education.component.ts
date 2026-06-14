@@ -1,6 +1,5 @@
 import { Component, inject } from '@angular/core';
 import { TranslationService } from '../../services/translation.service';
-import { FileReaderService } from '../../services/file-reader.service';
 import { CommonModule } from '@angular/common';
 import { staggerAboutTransition, staggerEducationTransition, staggerTransition } from '../../../route-transition';
 
@@ -14,8 +13,6 @@ import { staggerAboutTransition, staggerEducationTransition, staggerTransition }
 })
 export class EducationComponent {
   private translationService = inject(TranslationService);
-  private fileReaderService = inject(FileReaderService);
-  pdfContent: string | null = null;
 
   
   
@@ -111,32 +108,18 @@ export class EducationComponent {
     }
   ];
 
-  // Comprueba si existe el archivo y luego descarga el PDF
-  checkFileAndDownload(): void {
-    console.log('Descargando CV...');
-    const filePath = '/assets/cv.txt';  // Ruta del archivo en assets
-
-        this.pdfContent = this.fileReaderService.pdfText;
-        this.downloadPDF();
-      };
-
-  // Convierte el contenido Base64 en un archivo PDF y lo descarga
+  // Descarga el PDF directamente
   downloadPDF(): void {
-    if (this.pdfContent) {
-      const base64Data = this.pdfContent;
-      const binary = atob(base64Data);
-      const array = [];
+    console.log('Descargando CV PDF...');
+    const link = document.createElement('a');
+    link.href = '/CV - Claudio Nunez Oyarzun.pdf';
+    link.download = 'CV - Claudio Nunez Oyarzun.pdf';
+    link.click();
+  }
 
-      for (let i = 0; i < binary.length; i++) {
-        array.push(binary.charCodeAt(i));
-      }
-
-      const blob = new Blob([new Uint8Array(array)], { type: 'application/pdf' });
-      const link = document.createElement('a');
-      link.href = window.URL.createObjectURL(blob);
-      link.download = 'CV.pdf';
-      link.click();
-    }
+  // Abre el CV HTML en una nueva pestaña
+  viewHTML(): void {
+    window.open('/cv.html', '_blank');
   }
 
 

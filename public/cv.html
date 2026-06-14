@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV Claudio Nuñez Oyarzún</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
+
+        :root {
+            --primary-color: #0f172a; /* Slate 900 */
+            --secondary-color: #3b82f6; /* Blue 500 */
+            --text-color: #334155; /* Slate 700 */
+            --text-light: #64748b; /* Slate 500 */
+            --bg-color: #ffffff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f1f5f9;
+            color: var(--text-color);
+            line-height: 1.5;
+            -webkit-print-color-adjust: exact;
+            print-color-adjust: exact;
+        }
+
+        .cv-container {
+            width: 210mm; /* A4 width */
+            min-height: 297mm; /* A4 height */
+            margin: 20px auto;
+            background-color: var(--bg-color);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Header */
+        .header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 30px 40px;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 5px;
+            letter-spacing: 1px;
+        }
+
+        .header h2 {
+            font-size: 16px;
+            font-weight: 400;
+            color: #94a3b8;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            font-size: 13px;
+            flex-wrap: wrap;
+        }
+
+        .contact-info span {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        /* Main Content */
+        .main-content {
+            padding: 30px 40px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        /* Sections */
+        .section-title {
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--primary-color);
+            padding-bottom: 5px;
+            margin-bottom: 12px;
+            text-transform: uppercase;
+        }
+
+        .profile-text {
+            font-size: 13px;
+            text-align: justify;
+        }
+
+        /* Skills */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            font-size: 13px;
+        }
+
+        .skill-item strong {
+            color: var(--primary-color);
+        }
+
+        /* Experience */
+        .job {
+            margin-bottom: 15px;
+        }
+
+        .job-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 5px;
+        }
+
+        .job-title {
+            font-size: 15px;
+            font-weight: 700;
+            color: var(--primary-color);
+        }
+
+        .job-company {
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--secondary-color);
+        }
+
+        .job-date {
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--text-light);
+        }
+
+        .job-desc {
+            font-size: 13px;
+            padding-left: 15px;
+        }
+
+        .job-desc li {
+            margin-bottom: 4px;
+        }
+
+        .job-stack {
+            font-size: 12px;
+            color: var(--text-light);
+            margin-top: 5px;
+            font-style: italic;
+        }
+
+        /* Two columns for bottom */
+        .bottom-columns {
+            display: flex;
+            gap: 30px;
+        }
+
+        .col {
+            flex: 1;
+        }
+
+        .edu-item {
+            margin-bottom: 8px;
+            font-size: 13px;
+        }
+
+        .edu-title {
+            font-weight: 600;
+            color: var(--primary-color);
+        }
+
+        /* Print Settings */
+        @media print {
+            body {
+                background-color: white;
+            }
+            .cv-container {
+                box-shadow: none;
+                margin: 0;
+                width: 100%;
+                max-width: 210mm;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="cv-container">
+    <header class="header">
+        <h1>CLAUDIO NUÑEZ OYARZÚN</h1>
+        <h2>Desarrollador Fullstack</h2>
+        <div class="contact-info">
+            <span>📍 Santiago, Chile</span>
+            <span>✉️ claudio.n.oyarzun@gmail.com</span>
+            <span>📱 +569 4277 2455</span>
+            <span>🔗 <a href="https://www.linkedin.com/in/cnoyarzun/" target="_blank" style="color: inherit; text-decoration: none; border-bottom: 1px dotted rgba(255,255,255,0.6);">LinkedIn</a> / Portafolio</span>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <!-- Perfil -->
+        <section>
+            <h3 class="section-title">Perfil Profesional</h3>
+            <p class="profile-text">
+                Desarrollador Fullstack con más de 8 años de experiencia en el diseño, desarrollo y mantenimiento de aplicaciones web robustas y escalables, enfocado principalmente en el sector bancario, financiero y transaccional. Poseo sólidos conocimientos en el ecosistema Java (Spring Boot) y frameworks modernos de Frontend (Angular, React). Cuento con experiencia como líder técnico y trabajando bajo metodologías ágiles. Apasionado por la resolución de problemas complejos, con facilidad para adaptarme a nuevas tecnologías y un fuerte compromiso con el trabajo colaborativo para alcanzar los objetivos de negocio.
+            </p>
+        </section>
+
+        <!-- Habilidades -->
+        <section>
+            <h3 class="section-title">Habilidades Técnicas</h3>
+            <div class="skills-grid">
+                <div class="skill-item"><strong>Backend:</strong> Java, Spring Boot, Spring Batch, NodeJS, C#</div>
+                <div class="skill-item"><strong>Frontend:</strong> Angular, ReactJS, JavaScript, HTML/CSS</div>
+                <div class="skill-item"><strong>Bases de Datos:</strong> PostgreSQL, SQL Server, Oracle, NoSQL, Snowflake</div>
+                <div class="skill-item"><strong>Cloud & DevOps:</strong> AWS, Docker, Git, CI/CD (Bamboo, Sonar)</div>
+                <div class="skill-item"><strong>Herramientas:</strong> Metodologías Ágiles (Scrum), Jira, Confluence</div>
+                <div class="skill-item"><strong>Otras:</strong> Desarrollo de Videojuegos (Unity, Godot)</div>
+            </div>
+        </section>
+
+        <!-- Experiencia -->
+        <section>
+            <h3 class="section-title">Experiencia Profesional</h3>
+            
+            <div class="job">
+                <div class="job-header">
+                    <div>
+                        <span class="job-title">Desarrollador Fullstack</span> | <span class="job-company">KDU Ingeniería</span>
+                    </div>
+                    <span class="job-date">Jun 2025 - Actualidad</span>
+                </div>
+                <ul class="job-desc">
+                    <li>Participación activa en el levantamiento de requerimientos y desarrollo de mejoras para proyectos de servicios del sector transaccional.</li>
+                    <li>Resolución de incidentes en producción y optimización de los sistemas existentes.</li>
+                </ul>
+                <div class="job-stack">Stack: Java, PostgreSQL, Angular 21+, AWS, Docker, Snowflake, Spring Batch, IA Generativa.</div>
+            </div>
+
+            <div class="job">
+                <div class="job-header">
+                    <div>
+                        <span class="job-title">Desarrollador Backend</span> | <span class="job-company">Scotiabank</span>
+                    </div>
+                    <span class="job-date">Sep 2024 - Jun 2025</span>
+                </div>
+                <ul class="job-desc">
+                    <li>Desarrollo y mejora continua de proyectos y servicios internos del banco, asegurando la calidad y estabilidad de las aplicaciones.</li>
+                </ul>
+                <div class="job-stack">Stack: Java, SQL Server, React JS.</div>
+            </div>
+
+            <div class="job">
+                <div class="job-header">
+                    <div>
+                        <span class="job-title">Desarrollador Backend</span> | <span class="job-company">KLAP</span>
+                    </div>
+                    <span class="job-date">Abr 2023 - Sep 2024</span>
+                </div>
+                <ul class="job-desc">
+                    <li>Desarrollo y optimización de servicios de adquirencia y transaccionales de alto tráfico.</li>
+                    <li>Soporte técnico avanzado a clientes, reduciendo tiempos de resolución de incidentes.</li>
+                </ul>
+                <div class="job-stack">Stack: Java, PostgreSQL.</div>
+            </div>
+
+            <div class="job">
+                <div class="job-header">
+                    <div>
+                        <span class="job-title">Desarrollador Fullstack</span> | <span class="job-company">SIIGROUP</span>
+                    </div>
+                    <span class="job-date">Feb 2022 - Mar 2023</span>
+                </div>
+                <ul class="job-desc">
+                    <li>Planificación, levantamiento y desarrollo de proyectos ágiles para el sector bancario.</li>
+                    <li>Refactorización de código legacy (IE) a estándares modernos para el sector bancario internacional.</li>
+                </ul>
+                <div class="job-stack">Stack: Java 11, Spring Boot, Angular 12, Magento, JavaScript.</div>
+            </div>
+
+            <div class="job">
+                <div class="job-header">
+                    <div>
+                        <span class="job-title">Desarrollador Fullstack</span> | <span class="job-company">3IT</span>
+                    </div>
+                    <span class="job-date">Ago 2021 - Ene 2022</span>
+                </div>
+                <ul class="job-desc">
+                    <li>Migración de aplicaciones internas desde AngularJS hacia Angular 11, mejorando mantenibilidad.</li>
+                </ul>
+                <div class="job-stack">Stack: Angular 11, Git, Sonar, Bamboo.</div>
+            </div>
+
+            <div class="job">
+                <div class="job-header">
+                    <div>
+                        <span class="job-title">Desarrollador Java / Consultor</span> | <span class="job-company">SONDA, INNOVAGROUP, AEURUS, ACTIVE IT</span>
+                    </div>
+                    <span class="job-date">Ene 2016 - Jul 2021</span>
+                </div>
+                <ul class="job-desc">
+                    <li>Proyectos previos como Consultor y Desarrollador para el sector de transportes, público y retail, implementando soluciones corporativas (Java, Angular, Oracle, Siebel).</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Columnas Inferiores -->
+        <div class="bottom-columns">
+            <section class="col">
+                <h3 class="section-title">Educación</h3>
+                <div class="edu-item">
+                    <div class="edu-title">Ingeniería en Informática & Analista Programador</div>
+                    <div>Duoc UC</div>
+                </div>
+                <div class="edu-item">
+                    <div class="edu-title">Desarrollador de Videojuegos Unity</div>
+                    <div>Coderhouse / Udemy</div>
+                </div>
+            </section>
+            
+            <section class="col">
+                <h3 class="section-title">Idiomas</h3>
+                <div class="edu-item">
+                    <div class="edu-title">Español</div>
+                    <div>Nativo</div>
+                </div>
+                <div class="edu-item">
+                    <div class="edu-title">Inglés</div>
+                    <div>Intermedio (B1)</div>
+                </div>
+            </section>
+        </div>
+    </main>
+</div>
+
+</body>
+</html>
