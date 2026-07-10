@@ -23,54 +23,52 @@ export class AboutPageComponent {
   experiences = [
     {
       id: 1,
-      year: '2024 - Present',
-      company: 'Scotiabank',
-      position: 'Senior Developer',
-      descriptionKey: 'Java, Springboot, SQL Server, React'
+      year: 'Jun 2025 - Present',
+      company: 'KDU Ingeniería',
+      position: 'Senior Fullstack Developer',
+      descriptionKey: 'experience.kdu.description',
+      technologies: 'Java, PostgreSQL, Angular 21+, AWS, Docker, Snowflake, Spring Batch'
     },
     {
       id: 2,
-      year: '2023 - 2024',
-      company: 'Klap',
+      year: 'Sep 2024 - Jun 2025',
+      company: 'Scotiabank',
       position: 'Backend Developer',
-      descriptionKey: 'Java, PostgreSQL'
+      descriptionKey: 'experience.scotiabank.description',
+      technologies: 'Java, SQL Server, React'
     },
     {
       id: 3,
-      year: '2022 - 2023',
-      company: 'SII Group',
-      position: 'Fullstack Developer',
-      descriptionKey: 'Java, Springboot, Oracle, Angular'
+      year: 'Apr 2023 - Sep 2024',
+      company: 'Klap',
+      position: 'Backend Developer',
+      descriptionKey: 'experience.klap.description',
+      technologies: 'Java, PostgreSQL'
     },
     {
       id: 4,
-      year: '2021 - 2022',
-      company: '3IT',
+      year: 'Feb 2022 - Mar 2023',
+      company: 'SII Group',
       position: 'Fullstack Developer',
-      descriptionKey: 'Angular'
+      descriptionKey: 'experience.siigroup.description',
+      technologies: 'Java, Spring Boot, Angular, Magento, JavaScript'
     },
     {
       id: 5,
-      year: '2020 - 2021',
-      company: 'SONDA',
-      position: 'Software Engineer',
-      descriptionKey: 'Java'
+      year: 'Aug 2021 - Jan 2022',
+      company: '3IT',
+      position: 'Fullstack Developer',
+      descriptionKey: 'experience.3it.description',
+      technologies: 'Angular, Git, Sonar, Bamboo'
     },
     {
       id: 6,
-      year: '2019 - 2020',
-      company: 'INNOVA Group',
-      position: 'Semi Senior Consultant',
-      descriptionKey: 'Java, Springboot, Oracle, Angular'
-    },
-    {
-      id: 7,
-      year: '2018 - 2019',
-      company: 'Aeurus',
-      position: 'Software Developer',
-      descriptionKey: 'Java, MySQL'
+      year: '2016 - 2021',
+      company: 'SONDA / INNOVAGROUP / AEURUS',
+      position: 'Java Developer / Consultant',
+      descriptionKey: 'experience.consulting.description',
+      technologies: 'Java, Angular, Oracle, Spring Boot, Siebel'
     }
-
   ];
 
   get timelineWidth(): string {
