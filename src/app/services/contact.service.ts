@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders, provideHttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { environment } from '../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -12,8 +13,8 @@ export class ContactService {
 
   sendEmail(emailData: any): Observable<any> {
     const headers = new HttpHeaders({
-      'x-rapidapi-key': 'e4e7671444mshd78f02c10d43aaep13fd66jsn6cd6dc3d5f2d', // tu API key
-      'x-rapidapi-host': 'mail-sender-api1.p.rapidapi.com',
+      'x-rapidapi-key': environment.rapidApiKey,
+      'x-rapidapi-host': environment.rapidApiHost,
       'Content-Type': 'application/json',
     });
 

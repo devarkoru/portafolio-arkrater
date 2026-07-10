@@ -1,18 +1,175 @@
 <section class="retro-project-gallery">
-    <div class="background-grid"></div>
-    <div class="content-wrapper">
-      <h2 class="section-title">{{ translate('projects.title') }}</h2>
-      <div class="gallery-grid">
-        <div class="project-box" *ngFor="let project of projects; let i = index">
-          <div class="project-content" [ngStyle]="{'background-image': 'url(' + project.image + ')',
-            'background-size': 'cover',
-            'background-position': 'center'
-          }">
-            <h3>{{ project.name }}</h3>
-            <p>{{ project.description }}</p>
-            <a href="{{ project.link }}" class="project-link">{{ translate('projects.viewProject') }}</a>
-          </div>
+  <div class="background-grid"></div>
+  <div class="content-wrapper">
+    <h2 class="section-title">{{ translate('projects.title') }}</h2>
+    <div class="gallery-grid">
+      <div class="project-box" *ngFor="let project of projects; let i = index">
+        <div class="project-content" [ngStyle]="{'background-image': 'url(' + project.image + ')',
+          'background-size': 'cover',
+          'background-position': 'center'
+        }">
+          <h3>{{ project.name }}</h3>
+          <p>{{ project.description }}</p>
+          <button (click)="openDemo(project.name)" class="project-link">{{ translate('projects.viewProject') }}</button>
         </div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
+
+<!-- Arcade Cabinet Modal Overlay -->
+<div class="arcade-cabinet-overlay" *ngIf="showCabinet" (click)="closeDemo()">
+  <div class="arcade-cabinet" (click)="$event.stopPropagation()">
+    <!-- Bezel Top -->
+    <div class="arcade-header">
+      <div class="marquee-text glitch" [attr.data-text]="activeDemo">{{ activeDemo }}</div>
+    </div>
+
+    <!-- Arcade CRT Screen -->
+    <div class="arcade-screen-container">
+      <div class="crt-scanlines"></div>
+      <div class="crt-flicker"></div>
+      <div class="crt-glare"></div>
+      
+      <div class="screen-viewport">
+        
+        <!-- Demo 1: Retro Game (Platformer) -->
+        <div *ngIf="activeDemo === 'Retro Game'" class="demo-wrapper">
+          <canvas id="platformerCanvas" width="400" height="200"></canvas>
+          <div class="demo-instructions">{{ translate('arcade.controls') }}</div>
+        </div>
+
+        <!-- Demo 2: Synth Wave -->
+        <div *ngIf="activeDemo === 'Synth Wave'" class="demo-wrapper">
+          <h4 class="synth-title">{{ translate('arcade.synthTitle') }}</h4>
+          <canvas id="synthCanvas" width="380" height="100"></canvas>
+          <div class="wave-controls">
+            <span class="control-label">Oscillator:</span>
+            <select [(ngModel)]="selectedWaveType" class="arcade-select">
+              <option value="sine">Sine</option>
+              <option value="square">Square</option>
+              <option value="sawtooth">Sawtooth</option>
+              <option value="triangle">Triangle</option>
+            </select>
+          </div>
+          <div class="synth-keyboard">
+            <button *ngFor="let note of noteKeys; let idx = index" 
+                    class="synth-key" 
+                    [class.active]="activeNote === note"
+                    (mousedown)="playNote(note)" 
+                    (mouseup)="stopNote()"
+                    (mouseleave)="stopNote()"
+                    (touchstart)="$event.preventDefault(); playNote(note)" 
+                    (touchend)="stopNote()">
+              {{ note }}
+              <span class="key-shortcut">{{ idx + 1 }}</span>
+            </button>
+          </div>
+          <div class="demo-instructions">Use keys 1-8 or click to play</div>
+        </div>
+
+        <!-- Demo 3: Pixel Art Grid Painter -->
+        <div *ngIf="activeDemo === 'Pixel Art'" class="demo-wrapper pixel-art-demo">
+          <h4 class="pixel-title">{{ translate('arcade.pixelTitle') }}</h4>
+          
+          <div class="pixel-grid-container">
+            <div *ngFor="let cell of pixelGrid; let i = index" 
+                 class="pixel-cell"
+                 [style.background-color]="cell"
+                 (mousedown)="paintPixel(i)">
+            </div>
+          </div>
+
+          <div class="pixel-tools">
+            <div class="palette-options">
+              <button *ngFor="let color of pixelPalette" 
+                      class="palette-color"
+                      [style.background-color]="color === 'rgba(0,0,0,0)' ? 'transparent' : color"
+                      [class.active]="selectedPixelColor === color"
+                      [class.eraser]="color === 'rgba(0,0,0,0)'"
+                      (click)="selectedPixelColor = color">
+              </button>
+            </div>
+            <div class="action-buttons">
+              <button (click)="clearPixelGrid()" class="arcade-btn">{{ translate('arcade.clear') }}</button>
+              <button (click)="downloadPixelArt()" class="arcade-btn highlight">{{ translate('arcade.download') }}</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Demo 4: Time Machine (Space Invaders) -->
+        <div *ngIf="activeDemo === 'Time Machine'" class="demo-wrapper">
+          <canvas id="spaceCanvas" width="400" height="280"></canvas>
+          <div class="demo-instructions">Move Mouse / Tap Screen to Shoot. Arrow Keys + Spacebar supported.</div>
+        </div>
+
+        <!-- Demo 5: Cyber Chat -->
+        <div *ngIf="activeDemo === 'Cyber Chat'" class="demo-wrapper terminal-demo">
+          <div id="terminalHistory" class="terminal-history">
+            <div *ngFor="let log of chatHistory" [class]="'terminal-log ' + log.sender">
+              {{ log.text }}
+            </div>
+          </div>
+          <div class="terminal-input-bar">
+            <span class="terminal-prompt">></span>
+            <input type="text" 
+                   [(ngModel)]="chatInput" 
+                   (keydown.enter)="sendChatMessage()"
+                   [placeholder]="translate('arcade.terminalPlaceholder')"
+                   class="terminal-input"
+                   autofocus />
+          </div>
+        </div>
+
+        <!-- Demo 6: Neon Dreams -->
+        <div *ngIf="activeDemo === 'Neon Dreams'" class="demo-wrapper particles-demo">
+          <h4 class="particles-title">{{ translate('arcade.particlesTitle') }}</h4>
+          <canvas id="particleCanvas" width="380" height="150"></canvas>
+          
+          <div class="sliders-row">
+            <div class="slider-group">
+              <label>Gravity: {{ particleGravity }}</label>
+              <input type="range" min="0" max="0.3" step="0.01" [(ngModel)]="particleGravity" class="arcade-range" />
+            </div>
+            <div class="slider-group">
+              <label>Speed: {{ particleSpeed }}</label>
+              <input type="range" min="1" max="8" step="0.5" [(ngModel)]="particleSpeed" class="arcade-range" />
+            </div>
+            <div class="slider-group">
+              <label>Theme:</label>
+              <select [(ngModel)]="particleTheme" class="arcade-select small">
+                <option value="cyberpunk">Cyber</option>
+                <option value="matrix">Matrix</option>
+                <option value="synthwave">Vapor</option>
+                <option value="fire">Fire</option>
+              </select>
+            </div>
+          </div>
+          <div class="demo-instructions">Move mouse/touch screen to emit neon energy trails</div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Cabinet Panel Controls -->
+    <div class="arcade-panel">
+      <div class="joystick-base">
+        <div class="joystick-shaft">
+          <div class="joystick-knob"></div>
+        </div>
+      </div>
+      <div class="arcade-buttons">
+        <button class="arcade-action-btn btn-red"></button>
+        <button class="arcade-action-btn btn-blue"></button>
+        <button class="arcade-action-btn btn-yellow"></button>
+      </div>
+    </div>
+
+    <!-- Quit Button -->
+    <div class="arcade-coin-door">
+      <button class="coin-btn" (click)="closeDemo()">
+        <span class="insert-coin">{{ translate('arcade.insertCoin') }}</span>
+      </button>
+    </div>
+  </div>
+</div>

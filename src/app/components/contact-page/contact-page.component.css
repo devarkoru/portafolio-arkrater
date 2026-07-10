@@ -3,6 +3,9 @@
     color: #00ff00;
     font-family: 'VT323', monospace;
     padding: 4rem 0;
+    min-height: calc(100vh - 120px);
+    display: flex;
+    align-items: center;
   }
 
   .contact-container {
