@@ -304,11 +304,17 @@ p {
 @media (max-width: 768px) {
   .container {
     flex-direction: column;
+    padding: 0 1rem;
   }
 
   .content {
     padding-right: 0;
     margin-bottom: 2rem;
+    text-align: center;
+  }
+
+  h2 {
+    font-size: 1.8rem;
   }
 
   .portrait-container {

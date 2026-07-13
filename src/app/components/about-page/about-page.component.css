@@ -408,3 +408,17 @@ p {
                  -0.025em -0.05em 0 #ffff00;
   }
 }
+
+@media (max-width: 768px) {
+  h2 {
+    font-size: 1.8rem !important;
+    text-align: center;
+  }
+  .timeline-item {
+    max-width: 90%;
+    flex-basis: auto;
+  }
+  .about-content {
+    text-align: center;
+  }
+}
