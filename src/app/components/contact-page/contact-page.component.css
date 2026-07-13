@@ -150,9 +150,31 @@
   @media (max-width: 768px) {
     .contact-container {
       flex-direction: column;
+      padding: 0 0.75rem;
     }
 
     .contact-info, .contact-form {
       width: 100%;
+    }
+
+    .contact-form {
+      padding: 1.25rem 1rem;
+    }
+
+    .social-links {
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1rem;
+    }
+
+    h2 {
+      font-size: 1.8rem !important;
+      text-align: center;
+    }
+
+    .retro-logo {
+      display: block;
+      margin: 0 auto 2rem;
+      max-width: 100%;
     }
   }

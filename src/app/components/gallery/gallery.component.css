@@ -129,8 +129,24 @@
   }
   
   @media (max-width: 768px) {
+    .section-title {
+      font-size: 1.8rem !important;
+    }
+
     .gallery-grid {
       grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      padding: 0 1rem;
+    }
+
+    /* Show project title and details directly on mobile without hover */
+    .project-content {
+      opacity: 1 !important;
+      background: rgba(0, 0, 0, 0.75) !important;
+    }
+
+    .project-content h3,
+    .project-content p {
+      opacity: 1 !important;
     }
   }
 
